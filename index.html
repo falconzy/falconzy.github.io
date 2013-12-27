@@ -9,8 +9,8 @@
   <meta name="author" content="falconzy">
 
   
-  <meta name="description" content="Hello Octopress! run the following: rake generate # Generates posts and pages into the public directory
-rake watch # Watches source/ and sass/ for &hellip;">
+  <meta name="description" content="How to setup a Octopress website Octopress Setup (http://octopress.org/docs/setup/) Before You Begin Install Git.
+Install Ruby. Setup Octopress git &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,13 +95,78 @@ rake watch # Watches source/ and sass/ for &hellip;">
   </header>
 
 
-  <div class="entry-content"><p><strong>Hello Octopress!</strong></p>
+  <div class="entry-content"><p><strong>How to setup a Octopress website</strong></p>
 
-<p>run the following:</p>
+<h2>Octopress Setup (<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a>)</h2>
+
+<h2>Before You Begin</h2>
+
+<ul>
+<li>Install Git.</li>
+<li>Install Ruby.</li>
+</ul>
+
+
+<h2>Setup Octopress</h2>
+
+<p>git clone git://github.com/imathis/octopress.git octopress
+cd octopress</p>
+
+<h2>install dependencies</h2>
+
+<p>gem install bundler
+bundle install</p>
+
+<p>Install the default Octopress theme.</p>
+
+<p>rake install</p>
+
+<p>Configuring Octopress(<a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a>)</p>
+
+<h2>Blog Configuration</h2>
+
+<p>In the _config.yml there are three sections for configuring your Octopress Blog. Spoiler: You must change url, and you&rsquo;ll probably change title, subtitle and author and enable some 3rd party services.
+&ndash; Main Configs
+&ndash; Jekyll &amp; Plugins
+&ndash; 3rd Party Settings</p>
+
+<h2>Blog Posts(<a href="http://octopress.org/docs/blogging/">http://octopress.org/docs/blogging/</a>)</h2>
+
+<p>Syntax
+New Post</p>
+
+<p>rake new_post[&ldquo;title&rdquo;]</p>
+
+<p>New Pages</p>
+
+<p>rake new_page[super-awesome]</p>
+
+<h1>creates /source/super-awesome/index.markdown</h1>
+
+<p>rake new_page[super-awesome/page.html]</p>
+
+<h1>creates /source/super-awesome/page.html</h1>
+
+<h2>Generate &amp; Preview</h2>
 
 <p>rake generate   # Generates posts and pages into the public directory
 rake watch      # Watches source/ and sass/ for changes and regenerates
 rake preview    # Watches, and mounts a webserver at <a href="http://localhost:4000">http://localhost:4000</a></p>
+
+<h2>Deploying to Github Pages</h2>
+
+<p>Create a new Github repository and name the repository with the format username.github.io, where username is your GitHub user name or organization name. (DO NOT ADD any file inside)</p>
+
+<p>rake setup_github_pages</p>
+
+<p>rake generate
+rake deploy</p>
+
+<h2>commit the source for your blog.</h2>
+
+<p>git add .
+git commit -m &lsquo;your message&rsquo;
+git push origin source</p>
 </div>
   
   
