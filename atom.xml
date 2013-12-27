@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[falconzy's Blog]]></title>
+  <link href="http://falconzy.github.io/atom.xml" rel="self"/>
+  <link href="http://falconzy.github.io/"/>
+  <updated>2013-12-26T20:46:20+08:00</updated>
+  <id>http://falconzy.github.io/</id>
+  <author>
+    <name><![CDATA[falconzy]]></name>
+    <email><![CDATA[ian@zhaoyan.me]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Octopress]]></title>
+    <link href="http://falconzy.github.io/blog/2013/12/26/hello-octopress/"/>
+    <updated>2013-12-26T20:42:38+08:00</updated>
+    <id>http://falconzy.github.io/blog/2013/12/26/hello-octopress</id>
+    <content type="html"><![CDATA[<p><strong>Hello Octopress!</strong></p>
+
+<p>run the following:</p>
+
+<p>rake generate   # Generates posts and pages into the public directory
+rake watch      # Watches source/ and sass/ for changes and regenerates
+rake preview    # Watches, and mounts a webserver at <a href="http://localhost:4000">http://localhost:4000</a></p>
+]]></content>
+  </entry>
+  
+</feed>
