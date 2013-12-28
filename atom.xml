@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2013-12-28T12:46:20+08:00</updated>
+  <updated>2013-12-28T15:58:02+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[falconzy]]></name>
@@ -53,6 +53,15 @@
 <p><code>
 when Octopress runs commond rake depoly, it will push two brance to Github, one call &ldquo;source&rdquo;, it&rsquo;s all your octopress code, another call &ldquo;master&rdquo;, it&rsquo;s the gernerated html file to display your website. need to make sure all your brance up to date before you run &ldquo;rake deploy&rdquo;.
 </code></p></blockquote>
+
+<h2>Extra Reading</h2>
+
+<ul>
+<li><a href="http://webdesign.tutsplus.com/tutorials/applications/getting-started-with-octopress/">Getting Started with Octopress</a></li>
+<li><a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a></li>
+<li><a href="http://daringfireball.net/projects/markdown/syntax">MarkDown Syntax</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
