@@ -5,12 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello Octopress - falconzy's Blog</title>
+  <title>Setup a Octopress Blog With Github - falconzy's Blog</title>
   <meta name="author" content="falconzy">
 
   
-  <meta name="description" content="How to setup a Octopress website Octopress Setup (http://octopress.org/docs/setup/) Before You Begin Install Git.
-Install Ruby. Setup Octopress git &hellip;">
+  <meta name="description" content="Follow the Gudie: Octopress Setup
+Configuration
+Blog Posts
+Deploying to Github Pages
+Markdown: Basics Troubleshooting Here are some problem i face &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,7 +72,7 @@ Install Ruby. Setup Octopress git &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Hello Octopress</h1>
+      <h1 class="entry-title">Setup a Octopress Blog With Github</h1>
     
     
       <p class="meta">
@@ -92,78 +95,41 @@ Install Ruby. Setup Octopress git &hellip;">
   </header>
 
 
-<div class="entry-content"><p><strong>How to setup a Octopress website</strong></p>
-
-<h2>Octopress Setup (<a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a>)</h2>
-
-<h2>Before You Begin</h2>
+<div class="entry-content"><h2>Follow the Gudie: </h2>
 
 <ul>
-<li>Install Git.</li>
-<li>Install Ruby.</li>
+<li><a href="http://octopress.org/docs/setup/">Octopress Setup</a></li>
+<li><a href="http://octopress.org/docs/configuring/">Configuration</a></li>
+<li><a href="http://octopress.org/docs/blogging/">Blog Posts</a></li>
+<li><a href="http://octopress.org/docs/deploying/github/">Deploying to Github Pages</a></li>
+<li><a href="http://daringfireball.net/projects/markdown/basics">Markdown: Basics</a></li>
 </ul>
 
 
-<h2>Setup Octopress</h2>
+<h2>Troubleshooting</h2>
 
-<p>git clone git://github.com/imathis/octopress.git octopress
-cd octopress</p>
+<hr />
 
-<h2>install dependencies</h2>
+<p>Here are some problem i face during the <em>installation and setup</em> process,hope it helps you:</br></p>
 
-<p>gem install bundler
-bundle install</p>
+<h2>Error 1</h2>
 
-<p>Install the default Octopress theme.</p>
+<blockquote><p>You have already activated rake 10.1.1, but your Gemfile requires rake 0.9.2.2. Using bundle exec may solve this.</p>
 
-<p>rake install</p>
+<h2>solution :</h2>
 
-<p>Configuring Octopress(<a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a>)</p>
+<p>modify the &ldquo;Gemfile&rdquo;, changed to
+<code>gem &lsquo;rake&rsquo;, &lsquo;~> 10.1.1&rsquo;</code></p></blockquote>
 
-<h2>Blog Configuration</h2>
+<h2>Error 2</h2>
 
-<p>In the _config.yml there are three sections for configuring your Octopress Blog. Spoiler: You must change url, and you&rsquo;ll probably change title, subtitle and author and enable some 3rd party services.
-&ndash; Main Configs
-&ndash; Jekyll &amp; Plugins
-&ndash; 3rd Party Settings</p>
+<blockquote><p>Fail to deply when run &ldquo;rake deploy&rdquo;</p>
 
-<h2>Blog Posts(<a href="http://octopress.org/docs/blogging/">http://octopress.org/docs/blogging/</a>)</h2>
+<h2>solution :</h2>
 
-<p>Syntax
-New Post</p>
-
-<p>rake new_post[&ldquo;title&rdquo;]</p>
-
-<p>New Pages</p>
-
-<p>rake new_page[super-awesome]</p>
-
-<h1>creates /source/super-awesome/index.markdown</h1>
-
-<p>rake new_page[super-awesome/page.html]</p>
-
-<h1>creates /source/super-awesome/page.html</h1>
-
-<h2>Generate &amp; Preview</h2>
-
-<p>rake generate   # Generates posts and pages into the public directory
-rake watch      # Watches source/ and sass/ for changes and regenerates
-rake preview    # Watches, and mounts a webserver at <a href="http://localhost:4000">http://localhost:4000</a></p>
-
-<h2>Deploying to Github Pages</h2>
-
-<p>Create a new Github repository and name the repository with the format username.github.io, where username is your GitHub user name or organization name. (DO NOT ADD any file inside)</p>
-
-<p>rake setup_github_pages</p>
-
-<p>rake generate
-rake deploy</p>
-
-<h2>commit the source for your blog.</h2>
-
-<p>git add .
-git commit -m &lsquo;your message&rsquo;
-git push origin source</p>
+<p><code>
+when Octopress runs commond rake depoly, it will push two brance to Github, one call &ldquo;source&rdquo;, it&rsquo;s all your octopress code, another call &ldquo;master&rdquo;, it&rsquo;s the gernerated html file to display your website. need to make sure all your brance up to date before you run &ldquo;rake deploy&rdquo;.
+</code></p></blockquote>
 </div>
 
 
@@ -217,7 +183,7 @@ git push origin source</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/12/26/hello-octopress/">Hello Octopress</a>
+        <a href="/blog/2013/12/26/hello-octopress/">Setup a Octopress Blog With Github</a>
       </li>
     
   </ul>
