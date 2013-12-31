@@ -4,10 +4,10 @@
   <title><![CDATA[Category: Web | falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2013-12-31T23:31:04+08:00</updated>
+  <updated>2013-12-31T23:42:53+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
-    <name><![CDATA[falconzy]]></name>
+    <name><![CDATA[Ian Zhao]]></name>
     <email><![CDATA[ian@zhaoyan.me]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -48,7 +48,7 @@ OAuth 2.0 – The Good, The Bad &amp; The Ugly
 
 <p>Since this is a redirection-based flow, the client must be able to interact with the resource owner’s user agent (which in most cases is a web browser) and hence is typically suited for a web application. The below diagram is a bird’s eye view of how the end-user (or the resource owner) uses the client application (web-server based application in this case) to authenticate and authorize with the authorization server, in order to access the resources protected by the resource server.</p>
 
-<p><img class="center" src="/images/web_server_flow.jpg" width="600" height="450" title="Web Server Flow" ></p>
+<p><img class="center <a" src="href="http://falconzy.github.io/images/web_server_flow.jpg">http://falconzy.github.io/images/web_server_flow.jpg</a>" width="600" height="450" title="Web Server Flow" ></p>
 
 <h2>Authenticate &amp; Authorize the Client</h2>
 
