@@ -10,7 +10,8 @@
 
   
   <meta name="description" content="installation $ npm install mongoose Connection var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test'); var db = mongoose. &hellip;">
+mongoose.connect('mongodb://localhost/tasks');
+var db = mongoose. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,9 +104,9 @@ mongoose.connect('mongodb://localhost/test'); var db = mongoose. &hellip;">
 <h3>Connection</h3>
 
 <pre><code>var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
-
+mongoose.connect('mongodb://localhost/tasks');
 var db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
 // conding here;
@@ -113,28 +114,78 @@ db.once('open', function callback () {
 });
 </code></pre>
 
+<h3>Disconnect</h3>
+
+<pre><code>mongoose.disconnect();
+</code></pre>
+
+<h3>REGISTERING A SCHEMA</h3>
+
 <p>With Mongoose, everything is derived from a <em>Schema</em>.</p>
 
-<pre><code>var kittySchema = mongoose.Schema({
-name: String
-})
+<pre><code>var Schema = mongoose.Schema;
+var Tasks = new Schema({
+        project: String,
+        description: String
+});
 </code></pre>
 
-<p>next step is compiling our schema into a <em>Model</em>.</p>
+<p>Next step is compiling our schema into a <em>Model</em>.</p>
 
-<pre><code>var Kitten = mongoose.model('Kitten', kittySchema)
+<pre><code>mongoose.model('Task', Tasks);
 </code></pre>
 
-<p>A model is a class with which construct documents.</p>
+<h3>ADDING A TASK</h3>
 
-<pre><code>var silence = new Kitten({ name: 'Silence' })
-console.log(silence.name) // 'Silence'
+<pre><code>var Task = mongoose.model('Task');
+var task = new Task();
+task.project = 'Bikeshed';
+task.description = 'Paint the bikeshed red.';
+task.save(function(err) {
+    if (err) throw err;
+    console.log('Task saved.');
+});
 </code></pre>
+
+<h3>SEARCHING FOR A DOCUMENT</h3>
+
+<pre><code>var Task = mongoose.model('Task');
+Task.find({'project': 'Bikeshed'}).each(function(err, task) {
+    if (task != null) {
+        console.log('ID:' + task._id);
+        console.log(task.description);
+        } 
+});
+</code></pre>
+
+<h3>UPDATING A DOCUMENT</h3>
+
+<pre><code>var Task = mongoose.model('Task');
+Task.update(
+    {_id: '4e65b793d0cf5ca508000001'}, \\Update using internal ID
+    {description: 'Paint the bikeshed green.'},
+    {multi: false}, \\Only update one document
+    function(err, rows_updated) {
+        if (err) throw err;
+        console.log('Updated.');
+    }
+);
+</code></pre>
+
+<h3>REMOVING A DOCUMENT</h3>
+
+<pre><code>var Task = mongoose.model('Task');
+    Task.findById('4e65b3dce1592f7d08000001', function(err, task) {
+    task.remove();
+});
+</code></pre>
+
+<h3>Extra</h3>
 
 <p>add <em>methods</em> to our documents:</br>
 <strong>methods must be added to the schema before compiling it with mongoose.model()</strong></p>
 
-<pre><code>kittySchema.methods.speak = function () {
+<pre><code>Tasks.methods.list = function () {
 var greeting = this.name
     ? "Meow name is " + this.name
     : "I don't have a name"
