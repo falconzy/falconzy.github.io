@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: MEAN_Stack | falconzy's Blog]]></title>
+  <link href="http://falconzy.github.io/blog/categories/mean-stack/atom.xml" rel="self"/>
+  <link href="http://falconzy.github.io/"/>
+  <updated>2014-01-01T00:29:27+08:00</updated>
+  <id>http://falconzy.github.io/</id>
+  <author>
+    <name><![CDATA[Ian Zhao]]></name>
+    <email><![CDATA[ian@zhaoyan.me]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Started Mongoose]]></title>
+    <link href="http://falconzy.github.io/blog/2013/12/31/mongoose/"/>
+    <updated>2013-12-31T23:50:48+08:00</updated>
+    <id>http://falconzy.github.io/blog/2013/12/31/mongoose</id>
+    <content type="html"><![CDATA[<h3>installation</h3>
+
+<pre><code>$ npm install mongoose
+</code></pre>
+
+<h3>Connection</h3>
+
+<pre><code>var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+// conding here;
+//Once connection opens,callback will be called here.
+});
+</code></pre>
+
+<p>With Mongoose, everything is derived from a <em>Schema</em>.</p>
+
+<pre><code>var kittySchema = mongoose.Schema({
+name: String
+})
+</code></pre>
+
+<p>next step is compiling our schema into a <em>Model</em>.</p>
+
+<pre><code>var Kitten = mongoose.model('Kitten', kittySchema)
+</code></pre>
+
+<p>A model is a class with which construct documents.</p>
+
+<pre><code>var silence = new Kitten({ name: 'Silence' })
+console.log(silence.name) // 'Silence'
+</code></pre>
+
+<p>add <em>methods</em> to our documents:</br>
+<strong>methods must be added to the schema before compiling it with mongoose.model()</strong></p>
+
+<pre><code>kittySchema.methods.speak = function () {
+var greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name"
+    console.log(greeting);
+}
+var Kitten = mongoose.model('Kitten', kittySchema)
+</code></pre>
+
+<p><em>Functions</em> added to the <em>methods</em> property of a schema get compiled into the Model prototype and exposed on each document instance:</p>
+
+<pre><code>var fluffy = new Kitten({ name: 'fluffy' });
+fluffy.speak() // "Meow name is fluffy"
+</code></pre>
+
+<p>Each document can be saved to the database by calling its <em>save</em> method. The first argument to the callback will be an error if any occured.</p>
+
+<pre><code>fluffy.save(function (err, fluffy) {
+    if (err) // TODO handle the error
+    fluffy.speak();
+});
+</code></pre>
+
+<p>We can access all of the documents through model.</p>
+
+<pre><code>Kitten.find(function (err, kittens) {
+    if (err) // TODO handle err
+    console.log(kittens)
+})
+</code></pre>
+
+<p>filter by name, Mongoose supports MongoDBs rich <em>querying syntax</em>.</p>
+
+<pre><code>Kitten.find({ name: /^Fluff/ }, callback)
+</code></pre>
+
+<p>This performs a search for all documents with a name property that begins with &ldquo;Fluff&rdquo; and returns the results to the callback.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,15 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Setup a Octopress Blog With Github - falconzy's Blog</title>
+  <title>Getting Started Mongoose - falconzy's Blog</title>
   <meta name="author" content="Ian Zhao">
 
   
-  <meta name="description" content="Follow the Gudie: Octopress Setup
-Configuration
-Blog Posts
-Deploying to Github Pages
-Markdown: Basics Troubleshooting Here are some problem i face &hellip;">
+  <meta name="description" content="installation $ npm install mongoose Connection var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test'); var db = mongoose. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +19,7 @@ Markdown: Basics Troubleshooting Here are some problem i face &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://falconzy.github.io/blog/2013/12/26/hello-octopress">
+  <link rel="canonical" href="http://falconzy.github.io/blog/2013/12/31/mongoose">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="falconzy's Blog" type="application/atom+xml">
@@ -72,7 +69,7 @@ Markdown: Basics Troubleshooting Here are some problem i face &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Setup a Octopress Blog With Github</h1>
+      <h1 class="entry-title">Getting Started Mongoose</h1>
     
     
       <p class="meta">
@@ -88,59 +85,89 @@ Markdown: Basics Troubleshooting Here are some problem i face &hellip;">
   
 
 
-<time datetime="2013-12-26T20:42:38+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2013</time>
+<time datetime="2013-12-31T23:50:48+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>Follow the Gudie: </h2>
+<div class="entry-content"><h3>installation</h3>
 
-<ul>
-<li><a href="http://octopress.org/docs/setup/">Octopress Setup</a></li>
-<li><a href="http://octopress.org/docs/configuring/">Configuration</a></li>
-<li><a href="http://octopress.org/docs/blogging/">Blog Posts</a></li>
-<li><a href="http://octopress.org/docs/deploying/github/">Deploying to Github Pages</a></li>
-<li><a href="http://daringfireball.net/projects/markdown/basics">Markdown: Basics</a></li>
-</ul>
+<pre><code>$ npm install mongoose
+</code></pre>
 
+<h3>Connection</h3>
 
-<h2>Troubleshooting</h2>
+<pre><code>var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
 
-<hr />
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+// conding here;
+//Once connection opens,callback will be called here.
+});
+</code></pre>
 
-<p>Here are some problem i face during the <em>installation and setup</em> process,hope it helps you:</br></p>
+<p>With Mongoose, everything is derived from a <em>Schema</em>.</p>
 
-<h2>Error 1</h2>
+<pre><code>var kittySchema = mongoose.Schema({
+name: String
+})
+</code></pre>
 
-<blockquote><p>You have already activated rake 10.1.1, but your Gemfile requires rake 0.9.2.2. Using bundle exec may solve this.</p>
+<p>next step is compiling our schema into a <em>Model</em>.</p>
 
-<h2>solution :</h2>
+<pre><code>var Kitten = mongoose.model('Kitten', kittySchema)
+</code></pre>
 
-<p>modify the &ldquo;Gemfile&rdquo;, changed to
-<code>gem &lsquo;rake&rsquo;, &lsquo;~> 10.1.1&rsquo;</code></p></blockquote>
+<p>A model is a class with which construct documents.</p>
 
-<h2>Error 2</h2>
+<pre><code>var silence = new Kitten({ name: 'Silence' })
+console.log(silence.name) // 'Silence'
+</code></pre>
 
-<blockquote><p>Fail to deply when run &ldquo;rake deploy&rdquo;</p>
+<p>add <em>methods</em> to our documents:</br>
+<strong>methods must be added to the schema before compiling it with mongoose.model()</strong></p>
 
-<h2>solution :</h2>
+<pre><code>kittySchema.methods.speak = function () {
+var greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name"
+    console.log(greeting);
+}
+var Kitten = mongoose.model('Kitten', kittySchema)
+</code></pre>
 
-<p><code>
-when Octopress runs commond rake depoly, it will push two brance to Github, one call &ldquo;source&rdquo;, it&rsquo;s all your octopress code, another call &ldquo;master&rdquo;, it&rsquo;s the gernerated html file to display your website. need to make sure all your brance up to date before you run &ldquo;rake deploy&rdquo;.
-</code></p></blockquote>
+<p><em>Functions</em> added to the <em>methods</em> property of a schema get compiled into the Model prototype and exposed on each document instance:</p>
 
-<h2>Extra Reading</h2>
+<pre><code>var fluffy = new Kitten({ name: 'fluffy' });
+fluffy.speak() // "Meow name is fluffy"
+</code></pre>
 
-<ul>
-<li><a href="http://webdesign.tutsplus.com/tutorials/applications/getting-started-with-octopress/">Getting Started with Octopress</a></li>
-<li><a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a></li>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">MarkDown Syntax</a></li>
-<li><a href="http://www.moncefbelyamani.com/how-to-install-and-configure-octopress-on-a-mac/">How to Install &amp; Configure Octopress on a Mac, and Host Your Static Website on Amazon S3</a></li>
-<li><a href="http://www.darkcoding.net/software/markdown-quick-reference/">Markdown quick reference</a></li>
-</ul>
+<p>Each document can be saved to the database by calling its <em>save</em> method. The first argument to the callback will be an error if any occured.</p>
 
+<pre><code>fluffy.save(function (err, fluffy) {
+    if (err) // TODO handle the error
+    fluffy.speak();
+});
+</code></pre>
+
+<p>We can access all of the documents through model.</p>
+
+<pre><code>Kitten.find(function (err, kittens) {
+    if (err) // TODO handle err
+    console.log(kittens)
+})
+</code></pre>
+
+<p>filter by name, Mongoose supports MongoDBs rich <em>querying syntax</em>.</p>
+
+<pre><code>Kitten.find({ name: /^Fluff/ }, callback)
+</code></pre>
+
+<p>This performs a search for all documents with a name property that begins with &ldquo;Fluff&rdquo; and returns the results to the callback.</p>
 </div>
 
 
@@ -163,15 +190,21 @@ when Octopress runs commond rake depoly, it will push two brance to Github, one 
   
 
 
-<time datetime="2013-12-26T20:42:38+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2013</time>
+<time datetime="2013-12-31T23:50:48+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/mean-stack/'>MEAN_Stack</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://falconzy.github.io/blog/2013/12/26/hello-octopress/" data-via="falconzy" data-counturl="http://falconzy.github.io/blog/2013/12/26/hello-octopress/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://falconzy.github.io/blog/2013/12/31/mongoose/" data-via="falconzy" data-counturl="http://falconzy.github.io/blog/2013/12/31/mongoose/" >Tweet</a>
   
   
   
@@ -180,8 +213,8 @@ when Octopress runs commond rake depoly, it will push two brance to Github, one 
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/12/28/oauth-2-dot-0/" title="Previous Post: OAuth 2.0">&laquo; OAuth 2.0</a>
       
-        <a class="basic-alignment right" href="/blog/2013/12/28/oauth-2-dot-0/" title="Next Post: OAuth 2.0">OAuth 2.0 &raquo;</a>
       
     </p>
   </footer>
