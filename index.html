@@ -9,9 +9,10 @@
   <meta name="author" content="Ian Zhao">
 
   
-  <meta name="description" content="installation $ npm install mongoose Connection var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tasks');
-var db = mongoose. &hellip;">
+  <meta name="description" content="Sublime Text 3 Reference Sublime Text Unofficial Documentation
+Sublime Text Keyboard Shortcuts
+Keyboard Shortcuts
+Best of Sublime Text 3: Features, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +68,118 @@ var db = mongoose. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/06/sublime-text-3-tips/">Sublime Text 3 - Tips</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-06T00:44:49+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Sublime Text 3 Reference</h3>
+
+<ul>
+<li><a href="http://docs.sublimetext.info/en/sublime-text-3/">Sublime Text Unofficial Documentation</a></li>
+<li><a href="http://scotch.io/bar-talk/sublime-text-keyboard-shortcuts">Sublime Text Keyboard Shortcuts</a></li>
+<li><a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html">Keyboard Shortcuts</a></li>
+<li><a href="http://scotch.io/bar-talk/best-of-sublime-text-3-features-plugins-and-settings">Best of Sublime Text 3: Features, Plugins, and Settings</a></li>
+<li><a href="http://www.hongkiat.com/blog/sublime-code-snippets/">Working With Code Snippets In Sublime Text</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Sublime Text 2 Tips and Tricks</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-project-bliss/">Sublime Text 2 Project Bliss</a></li>
+</ul>
+
+
+<h3>Add Shortcut to Mac</h3>
+
+<pre><code>cd /
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /bin/subl
+subl [fileName] (for edit in sublime text)
+</code></pre>
+
+<h2>Distraction Free Mode</h2>
+
+<p>Active by:</p>
+
+<pre><code>Control + Shift + Command + F
+</code></pre>
+
+<p>My Setting:</p>
+
+<pre><code>{
+   "line_numbers": false,      
+   "gutter": false,            
+   "draw_centered": true,      
+   "wrap_width": 80,           
+   "word_wrap": true,          
+   "scroll_past_end": true     
+}   
+</code></pre>
+
+<h3>Useful Keyboard Shortcuts &mdash;OSX</h3>
+
+<pre><code>Shift + Command + P         //Access the Command Palette
+Command + P                 //Fast File Switching
+Command + R                 //Goto Symbols
+Shift + Comand + T          //Open Rencent Closed File
+Command + [ or ]            //indent
+Ctrl + m                    //Jump between the {}
+ctrl + shift + M            //Select of all section between {}
+Command + /                 //Comment
+Command + Option + /        //Comment block 
+Command + L                 //Line selection
+Option + Arrow_key          //word by word
+Shift + Command + f         //Search for whole project
+Commond + Option + f        //replace
+Option + Command + [1,2,..] //layout window
+</code></pre>
+
+<h3>Enable multi-selection, you have several options:</h3>
+
+<ul>
+<li>Press <strong>Alt</strong> or <strong>Command</strong> and then click in each region where you require a cursor.</li>
+<li>Shift + Control + (Arrow_Key)</li>
+<li>Command + d: Select the current word and the next same word</li>
+<li>Select a block of lines, and then press <code>Shift + Command + L</code></li>
+<li>Add an additional cursor at all occurrences of a word by typing <strong>Ctrl+Command+G</strong></li>
+</ul>
+
+
+<h2>Suggest Package</h2>
+
+<ul>
+<li>Alignment</li>
+<li>Emmet</li>
+<li>Colorpicker</li>
+<li>SublimeCodeIntel</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -391,6 +504,10 @@ when Octopress runs commond rake depoly, it will push two brance to Github, one 
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/06/sublime-text-3-tips/">Sublime Text 3 - Tips</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/12/31/mongoose/">Getting Started Mongoose</a>

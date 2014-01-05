@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Getting Started Mongoose - falconzy's Blog</title>
+  <title>Sublime Text 3 - Tips - falconzy's Blog</title>
   <meta name="author" content="Ian Zhao">
 
   
-  <meta name="description" content="installation $ npm install mongoose Connection var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tasks');
-var db = mongoose. &hellip;">
+  <meta name="description" content="Sublime Text 3 Reference Sublime Text Unofficial Documentation
+Sublime Text Keyboard Shortcuts
+Keyboard Shortcuts
+Best of Sublime Text 3: Features, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +21,7 @@ var db = mongoose. &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://falconzy.github.io/blog/2013/12/31/mongoose">
+  <link rel="canonical" href="http://falconzy.github.io/blog/2014/01/06/sublime-text-3-tips">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="falconzy's Blog" type="application/atom+xml">
@@ -70,7 +71,7 @@ var db = mongoose. &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Getting Started Mongoose</h1>
+      <h1 class="entry-title">Sublime Text 3 - Tips</h1>
     
     
       <p class="meta">
@@ -86,139 +87,90 @@ var db = mongoose. &hellip;">
   
 
 
-<time datetime="2013-12-31T23:50:48+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+<time datetime="2014-01-06T00:44:49+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>installation</h3>
+<div class="entry-content"><h3>Sublime Text 3 Reference</h3>
 
-<pre><code>$ npm install mongoose
+<ul>
+<li><a href="http://docs.sublimetext.info/en/sublime-text-3/">Sublime Text Unofficial Documentation</a></li>
+<li><a href="http://scotch.io/bar-talk/sublime-text-keyboard-shortcuts">Sublime Text Keyboard Shortcuts</a></li>
+<li><a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html">Keyboard Shortcuts</a></li>
+<li><a href="http://scotch.io/bar-talk/best-of-sublime-text-3-features-plugins-and-settings">Best of Sublime Text 3: Features, Plugins, and Settings</a></li>
+<li><a href="http://www.hongkiat.com/blog/sublime-code-snippets/">Working With Code Snippets In Sublime Text</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Sublime Text 2 Tips and Tricks</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-project-bliss/">Sublime Text 2 Project Bliss</a></li>
+</ul>
+
+
+<h3>Add Shortcut to Mac</h3>
+
+<pre><code>cd /
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /bin/subl
+subl [fileName] (for edit in sublime text)
 </code></pre>
 
-<h3>Connection</h3>
+<h2>Distraction Free Mode</h2>
 
-<pre><code>var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tasks');
-var db = mongoose.connection;
+<p>Active by:</p>
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-// conding here;
-//Once connection opens,callback will be called here.
-});
+<pre><code>Control + Shift + Command + F
 </code></pre>
 
-<h3>Disconnect</h3>
+<p>My Setting:</p>
 
-<pre><code>mongoose.disconnect();
+<pre><code>{
+   "line_numbers": false,      
+   "gutter": false,            
+   "draw_centered": true,      
+   "wrap_width": 80,           
+   "word_wrap": true,          
+   "scroll_past_end": true     
+}   
 </code></pre>
 
-<h3>REGISTERING A SCHEMA</h3>
+<h3>Useful Keyboard Shortcuts &mdash;OSX</h3>
 
-<p>With Mongoose, everything is derived from a <em>Schema</em>.</p>
-
-<pre><code>var Schema = mongoose.Schema;
-var Tasks = new Schema({
-        project: String,
-        description: String
-});
+<pre><code>Shift + Command + P         //Access the Command Palette
+Command + P                 //Fast File Switching
+Command + R                 //Goto Symbols
+Shift + Comand + T          //Open Rencent Closed File
+Command + [ or ]            //indent
+Ctrl + m                    //Jump between the {}
+ctrl + shift + M            //Select of all section between {}
+Command + /                 //Comment
+Command + Option + /        //Comment block 
+Command + L                 //Line selection
+Option + Arrow_key          //word by word
+Shift + Command + f         //Search for whole project
+Commond + Option + f        //replace
+Option + Command + [1,2,..] //layout window
 </code></pre>
 
-<p>Next step is compiling our schema into a <em>Model</em>.</p>
+<h3>Enable multi-selection, you have several options:</h3>
 
-<pre><code>mongoose.model('Task', Tasks);
-</code></pre>
+<ul>
+<li>Press <strong>Alt</strong> or <strong>Command</strong> and then click in each region where you require a cursor.</li>
+<li>Shift + Control + (Arrow_Key)</li>
+<li>Command + d: Select the current word and the next same word</li>
+<li>Select a block of lines, and then press <code>Shift + Command + L</code></li>
+<li>Add an additional cursor at all occurrences of a word by typing <strong>Ctrl+Command+G</strong></li>
+</ul>
 
-<h3>ADDING A TASK</h3>
 
-<pre><code>var Task = mongoose.model('Task');
-var task = new Task();
-task.project = 'Bikeshed';
-task.description = 'Paint the bikeshed red.';
-task.save(function(err) {
-    if (err) throw err;
-    console.log('Task saved.');
-});
-</code></pre>
+<h2>Suggest Package</h2>
 
-<h3>SEARCHING FOR A DOCUMENT</h3>
+<ul>
+<li>Alignment</li>
+<li>Emmet</li>
+<li>Colorpicker</li>
+<li>SublimeCodeIntel</li>
+</ul>
 
-<pre><code>var Task = mongoose.model('Task');
-Task.find({'project': 'Bikeshed'}).each(function(err, task) {
-    if (task != null) {
-        console.log('ID:' + task._id);
-        console.log(task.description);
-        } 
-});
-</code></pre>
-
-<h3>UPDATING A DOCUMENT</h3>
-
-<pre><code>var Task = mongoose.model('Task');
-Task.update(
-    {_id: '4e65b793d0cf5ca508000001'}, \\Update using internal ID
-    {description: 'Paint the bikeshed green.'},
-    {multi: false}, \\Only update one document
-    function(err, rows_updated) {
-        if (err) throw err;
-        console.log('Updated.');
-    }
-);
-</code></pre>
-
-<h3>REMOVING A DOCUMENT</h3>
-
-<pre><code>var Task = mongoose.model('Task');
-    Task.findById('4e65b3dce1592f7d08000001', function(err, task) {
-    task.remove();
-});
-</code></pre>
-
-<h3>Extra</h3>
-
-<p>add <em>methods</em> to our documents:</br>
-<strong>methods must be added to the schema before compiling it with mongoose.model()</strong></p>
-
-<pre><code>Tasks.methods.list = function () {
-var greeting = this.name
-    ? "Meow name is " + this.name
-    : "I don't have a name"
-    console.log(greeting);
-}
-var Kitten = mongoose.model('Kitten', kittySchema)
-</code></pre>
-
-<p><em>Functions</em> added to the <em>methods</em> property of a schema get compiled into the Model prototype and exposed on each document instance:</p>
-
-<pre><code>var fluffy = new Kitten({ name: 'fluffy' });
-fluffy.speak() // "Meow name is fluffy"
-</code></pre>
-
-<p>Each document can be saved to the database by calling its <em>save</em> method. The first argument to the callback will be an error if any occured.</p>
-
-<pre><code>fluffy.save(function (err, fluffy) {
-    if (err) // TODO handle the error
-    fluffy.speak();
-});
-</code></pre>
-
-<p>We can access all of the documents through model.</p>
-
-<pre><code>Kitten.find(function (err, kittens) {
-    if (err) // TODO handle err
-    console.log(kittens)
-})
-</code></pre>
-
-<p>filter by name, Mongoose supports MongoDBs rich <em>querying syntax</em>.</p>
-
-<pre><code>Kitten.find({ name: /^Fluff/ }, callback)
-</code></pre>
-
-<p>This performs a search for all documents with a name property that begins with &ldquo;Fluff&rdquo; and returns the results to the callback.</p>
 </div>
 
 
@@ -241,21 +193,15 @@ fluffy.speak() // "Meow name is fluffy"
   
 
 
-<time datetime="2013-12-31T23:50:48+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2013</time>
+<time datetime="2014-01-06T00:44:49+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/mean-stack/'>MEAN_Stack</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://falconzy.github.io/blog/2013/12/31/mongoose/" data-via="falconzy" data-counturl="http://falconzy.github.io/blog/2013/12/31/mongoose/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://falconzy.github.io/blog/2014/01/06/sublime-text-3-tips/" data-via="falconzy" data-counturl="http://falconzy.github.io/blog/2014/01/06/sublime-text-3-tips/" >Tweet</a>
   
   
   
@@ -264,10 +210,8 @@ fluffy.speak() // "Meow name is fluffy"
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/12/28/oauth-2-dot-0/" title="Previous Post: OAuth 2.0">&laquo; OAuth 2.0</a>
+        <a class="basic-alignment left" href="/blog/2013/12/31/mongoose/" title="Previous Post: Getting Started mongoose">&laquo; Getting Started mongoose</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/01/06/sublime-text-3-tips/" title="Next Post: Sublime Text 3 - Tips">Sublime Text 3 - Tips &raquo;</a>
       
     </p>
   </footer>
