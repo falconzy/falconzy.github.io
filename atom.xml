@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2014-01-06T02:14:50+08:00</updated>
+  <updated>2014-01-09T20:34:31+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[Ian Zhao]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Test-Driven Development in Node.js With Mocha]]></title>
+    <link href="http://falconzy.github.io/blog/2014/01/09/tdd/"/>
+    <updated>2014-01-09T20:27:20+08:00</updated>
+    <id>http://falconzy.github.io/blog/2014/01/09/tdd</id>
+    <content type="html"><![CDATA[<h3>Reference</h3>
+
+<ul>
+<li><a href="http://webapplog.com/test-driven-development-in-node-js-with-mocha/">Test-Driven Development in Node.js With Mocha</a></li>
+<li><a href="http://www.codemag.com/Article/1308061">Asynchronous, Test-Driven Development, with JavaScript and Mocha</a></li>
+<li><a href="http://phawk.co.uk/blog/testing-node-apps-with-mocha">Testing node.js apps with mocha</a></li>
+<li><a href="http://visionmedia.github.io/mocha/#getting-started">Mocha Offical Page</a></li>
+<li><a href="http://redotheweb.com/2013/01/15/functional-testing-for-nodejs-using-mocha-and-zombie-js.html">Functional Testing For Node.js Using Mocha and Zombie.js</a></li>
+<li><a href="http://visionmedia.github.io/superagent/">SuperAgent</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/testing-in-node-js/">Testing in Node.js</a></li>
+<li><a href="http://chaijs.com/">Chai Assertion Library</a></li>
+</ul>
+
+
+<h3>package.json devDependancies</h3>
+
+<pre><code>devDependencies: {
+  "chai": "*",
+  "mocha": "*" // our preference, but you can use any test runner you like
+}
+</code></pre>
+
+<h3>Mocha structure</h3>
+
+<ul>
+<li><strong>describe()</strong> is used to group together similar tests in Mocha</li>
+<li><strong>It()</strong> describes a specific use-case for the method being tested.</li>
+<li><strong>done()</strong> callback &ndash; Testing asynchronous code</li>
+<li><strong>before()</strong>, <strong>after()</strong>, <strong>beforeEach()</strong>, <strong>afterEach()</strong> &ndash; hooks to setup the test case</li>
+<li><strong>Pending tests</strong> &ndash;  without a callback</li>
+</ul>
+
+
+<h3>chai BDD styles</h3>
+
+<p><a href="http://chaijs.com/api/bdd/">API Reference</a></p>
+
+<pre><code>var expect = chai.expect;
+expect(foo).to.be.a('string');
+expect(foo).to.equal('bar');
+expect(foo).to.have.length(3);
+expect(tea).to.have.property('flavors')
+    .with.length(3);
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sublime Text 3 - Tips]]></title>

@@ -5,14 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sublime Text 3 - Tips - falconzy's Blog</title>
+  <title>Test-Driven Development in Node.js With Mocha - falconzy's Blog</title>
   <meta name="author" content="Ian Zhao">
 
   
-  <meta name="description" content="Sublime Text 3 Reference Sublime Text Unofficial Documentation
-Sublime Text Keyboard Shortcuts
-Keyboard Shortcuts
-Best of Sublime Text 3: Features, &hellip;">
+  <meta name="description" content="Reference Test-Driven Development in Node.js With Mocha
+Asynchronous, Test-Driven Development, with JavaScript and Mocha
+Testing node.js apps with &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +20,7 @@ Best of Sublime Text 3: Features, &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://falconzy.github.io/blog/2014/01/06/sublime-text-3-tips">
+  <link rel="canonical" href="http://falconzy.github.io/blog/2014/01/09/tdd">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="falconzy's Blog" type="application/atom+xml">
@@ -71,7 +70,7 @@ Best of Sublime Text 3: Features, &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Sublime Text 3 - Tips</h1>
+      <h1 class="entry-title">Test-Driven Development in Node.js With Mocha</h1>
     
     
       <p class="meta">
@@ -87,90 +86,57 @@ Best of Sublime Text 3: Features, &hellip;">
   
 
 
-<time datetime="2014-01-06T00:44:49+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
+<time datetime="2014-01-09T20:27:20+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>Sublime Text 3 Reference</h3>
+<div class="entry-content"><h3>Reference</h3>
 
 <ul>
-<li><a href="http://docs.sublimetext.info/en/sublime-text-3/">Sublime Text Unofficial Documentation</a></li>
-<li><a href="http://scotch.io/bar-talk/sublime-text-keyboard-shortcuts">Sublime Text Keyboard Shortcuts</a></li>
-<li><a href="http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html">Keyboard Shortcuts</a></li>
-<li><a href="http://scotch.io/bar-talk/best-of-sublime-text-3-features-plugins-and-settings">Best of Sublime Text 3: Features, Plugins, and Settings</a></li>
-<li><a href="http://www.hongkiat.com/blog/sublime-code-snippets/">Working With Code Snippets In Sublime Text</a></li>
-<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Sublime Text 2 Tips and Tricks</a></li>
-<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-project-bliss/">Sublime Text 2 Project Bliss</a></li>
+<li><a href="http://webapplog.com/test-driven-development-in-node-js-with-mocha/">Test-Driven Development in Node.js With Mocha</a></li>
+<li><a href="http://www.codemag.com/Article/1308061">Asynchronous, Test-Driven Development, with JavaScript and Mocha</a></li>
+<li><a href="http://phawk.co.uk/blog/testing-node-apps-with-mocha">Testing node.js apps with mocha</a></li>
+<li><a href="http://visionmedia.github.io/mocha/#getting-started">Mocha Offical Page</a></li>
+<li><a href="http://redotheweb.com/2013/01/15/functional-testing-for-nodejs-using-mocha-and-zombie-js.html">Functional Testing For Node.js Using Mocha and Zombie.js</a></li>
+<li><a href="http://visionmedia.github.io/superagent/">SuperAgent</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/testing-in-node-js/">Testing in Node.js</a></li>
+<li><a href="http://chaijs.com/">Chai Assertion Library</a></li>
 </ul>
 
 
-<h3>Add Shortcut to Mac</h3>
+<h3>package.json devDependancies</h3>
 
-<pre><code>cd /
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /bin/subl
-subl [fileName] (for edit in sublime text)
+<pre><code>devDependencies: {
+  "chai": "*",
+  "mocha": "*" // our preference, but you can use any test runner you like
+}
 </code></pre>
 
-<h2>Distraction Free Mode</h2>
-
-<p>Active by:</p>
-
-<pre><code>Control + Shift + Command + F
-</code></pre>
-
-<p>My Setting:</p>
-
-<pre><code>{
-   "line_numbers": false,      
-   "gutter": false,            
-   "draw_centered": true,      
-   "wrap_width": 80,           
-   "word_wrap": true,          
-   "scroll_past_end": true     
-}   
-</code></pre>
-
-<h3>Useful Keyboard Shortcuts &mdash;OSX</h3>
-
-<pre><code>Shift + Command + P         //Access the Command Palette
-Command + P                 //Fast File Switching
-Command + R                 //Goto Symbols
-Shift + Comand + T          //Open Rencent Closed File
-Command + [ or ]            //indent
-Ctrl + m                    //Jump between the {}
-ctrl + shift + M            //Select of all section between {}
-Command + /                 //Comment
-Command + Option + /        //Comment block 
-Command + L                 //Line selection
-Option + Arrow_key          //word by word
-Shift + Command + f         //Search for whole project
-Commond + Option + f        //replace
-Option + Command + [1,2,..] //layout window
-</code></pre>
-
-<h3>Enable multi-selection, you have several options:</h3>
+<h3>Mocha structure</h3>
 
 <ul>
-<li>Press <strong>Alt</strong> or <strong>Command</strong> and then click in each region where you require a cursor.</li>
-<li>Shift + Control + (Arrow_Key)</li>
-<li>Command + d: Select the current word and the next same word</li>
-<li>Select a block of lines, and then press <code>Shift + Command + L</code></li>
-<li>Add an additional cursor at all occurrences of a word by typing <strong>Ctrl+Command+G</strong></li>
+<li><strong>describe()</strong> is used to group together similar tests in Mocha</li>
+<li><strong>It()</strong> describes a specific use-case for the method being tested.</li>
+<li><strong>done()</strong> callback &ndash; Testing asynchronous code</li>
+<li><strong>before()</strong>, <strong>after()</strong>, <strong>beforeEach()</strong>, <strong>afterEach()</strong> &ndash; hooks to setup the test case</li>
+<li><strong>Pending tests</strong> &ndash;  without a callback</li>
 </ul>
 
 
-<h2>Suggest Package</h2>
+<h3>chai BDD styles</h3>
 
-<ul>
-<li>Alignment</li>
-<li>Emmet</li>
-<li>Colorpicker</li>
-<li>SublimeCodeIntel</li>
-</ul>
+<p><a href="http://chaijs.com/api/bdd/">API Reference</a></p>
 
+<pre><code>var expect = chai.expect;
+expect(foo).to.be.a('string');
+expect(foo).to.equal('bar');
+expect(foo).to.have.length(3);
+expect(tea).to.have.property('flavors')
+    .with.length(3);
+</code></pre>
 </div>
 
 
@@ -193,7 +159,7 @@ Option + Command + [1,2,..] //layout window
   
 
 
-<time datetime="2014-01-06T00:44:49+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
+<time datetime="2014-01-09T20:27:20+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2014</time>
       
 
 
@@ -201,7 +167,7 @@ Option + Command + [1,2,..] //layout window
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://falconzy.github.io/blog/2014/01/06/sublime-text-3-tips/" data-via="falconzy" data-counturl="http://falconzy.github.io/blog/2014/01/06/sublime-text-3-tips/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://falconzy.github.io/blog/2014/01/09/tdd/" data-via="falconzy" data-counturl="http://falconzy.github.io/blog/2014/01/09/tdd/" >Tweet</a>
   
   
   
@@ -210,10 +176,8 @@ Option + Command + [1,2,..] //layout window
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/12/31/mongoose/" title="Previous Post: Getting Started mongoose">&laquo; Getting Started mongoose</a>
+        <a class="basic-alignment left" href="/blog/2014/01/06/sublime-text-3-tips/" title="Previous Post: Sublime Text 3 - Tips">&laquo; Sublime Text 3 - Tips</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/01/09/tdd/" title="Next Post: Test-Driven Development in Node.js With Mocha">Test-Driven Development in Node.js With Mocha &raquo;</a>
       
     </p>
   </footer>

@@ -9,10 +9,9 @@
   <meta name="author" content="Ian Zhao">
 
   
-  <meta name="description" content="Sublime Text 3 Reference Sublime Text Unofficial Documentation
-Sublime Text Keyboard Shortcuts
-Keyboard Shortcuts
-Best of Sublime Text 3: Features, &hellip;">
+  <meta name="description" content="Reference Test-Driven Development in Node.js With Mocha
+Asynchronous, Test-Driven Development, with JavaScript and Mocha
+Testing node.js apps with &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,85 @@ Best of Sublime Text 3: Features, &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/09/tdd/">Test-Driven Development in Node.js With Mocha</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-09T20:27:20+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Reference</h3>
+
+<ul>
+<li><a href="http://webapplog.com/test-driven-development-in-node-js-with-mocha/">Test-Driven Development in Node.js With Mocha</a></li>
+<li><a href="http://www.codemag.com/Article/1308061">Asynchronous, Test-Driven Development, with JavaScript and Mocha</a></li>
+<li><a href="http://phawk.co.uk/blog/testing-node-apps-with-mocha">Testing node.js apps with mocha</a></li>
+<li><a href="http://visionmedia.github.io/mocha/#getting-started">Mocha Offical Page</a></li>
+<li><a href="http://redotheweb.com/2013/01/15/functional-testing-for-nodejs-using-mocha-and-zombie-js.html">Functional Testing For Node.js Using Mocha and Zombie.js</a></li>
+<li><a href="http://visionmedia.github.io/superagent/">SuperAgent</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/testing-in-node-js/">Testing in Node.js</a></li>
+<li><a href="http://chaijs.com/">Chai Assertion Library</a></li>
+</ul>
+
+
+<h3>package.json devDependancies</h3>
+
+<pre><code>devDependencies: {
+  "chai": "*",
+  "mocha": "*" // our preference, but you can use any test runner you like
+}
+</code></pre>
+
+<h3>Mocha structure</h3>
+
+<ul>
+<li><strong>describe()</strong> is used to group together similar tests in Mocha</li>
+<li><strong>It()</strong> describes a specific use-case for the method being tested.</li>
+<li><strong>done()</strong> callback &ndash; Testing asynchronous code</li>
+<li><strong>before()</strong>, <strong>after()</strong>, <strong>beforeEach()</strong>, <strong>afterEach()</strong> &ndash; hooks to setup the test case</li>
+<li><strong>Pending tests</strong> &ndash;  without a callback</li>
+</ul>
+
+
+<h3>chai BDD styles</h3>
+
+<p><a href="http://chaijs.com/api/bdd/">API Reference</a></p>
+
+<pre><code>var expect = chai.expect;
+expect(foo).to.be.a('string');
+expect(foo).to.equal('bar');
+expect(foo).to.have.length(3);
+expect(tea).to.have.property('flavors')
+    .with.length(3);
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -504,6 +582,10 @@ when Octopress runs commond rake depoly, it will push two brance to Github, one 
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/09/tdd/">Test-Driven Development in Node.js With Mocha</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/01/06/sublime-text-3-tips/">Sublime Text 3 - Tips</a>
