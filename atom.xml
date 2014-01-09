@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2014-01-09T20:39:43+08:00</updated>
+  <updated>2014-01-09T20:44:19+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[Ian Zhao]]></name>
@@ -20,9 +20,12 @@
     <id>http://falconzy.github.io/blog/2014/01/09/setup-grunt-project</id>
     <content type="html"><![CDATA[<h3>Reference</h3>
 
-<p><a href="http://jonathanmh.com/make-grunt-watch-for-lesscss-changes/">Make Grunt watch for LESS-CSS changes</a>
-<a href="http://merrickchristensen.com/articles/gruntjs-workflow.html">Grunt.js Workflow</a>
-<a href="http://gruntjs.com/getting-started">Grunt Getting Start</a></p>
+<ul>
+<li><a href="http://jonathanmh.com/make-grunt-watch-for-lesscss-changes/">Make Grunt watch for LESS-CSS changes</a></li>
+<li><a href="http://merrickchristensen.com/articles/gruntjs-workflow.html">Grunt.js Workflow</a></li>
+<li><a href="http://gruntjs.com/getting-started">Grunt Getting Start</a></li>
+</ul>
+
 
 <h3>Installation</h3>
 
@@ -81,7 +84,6 @@ package.json</p>
 <p><strong>JSHint</strong></p>
 
 <pre><code>npm install grunt-contrib-jshint --save-dev 
-
 module.exports = function(grunt) {
       grunt.initConfig({
         jshint: {
