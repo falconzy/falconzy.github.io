@@ -9,9 +9,9 @@
   <meta name="author" content="Ian Zhao">
 
   
-  <meta name="description" content="Reference Test-Driven Development in Node.js With Mocha
-Asynchronous, Test-Driven Development, with JavaScript and Mocha
-Testing node.js apps with &hellip;">
+  <meta name="description" content="Reference Make Grunt watch for LESS-CSS changes
+Grunt.js Workflow
+Grunt Getting Start Installation Lets install the Grunt CLI globally so we can &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,176 @@ Testing node.js apps with &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/09/setup-grunt-project/">Setup Grunt Project</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-09T20:38:10+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Reference</h3>
+
+<p><a href="http://jonathanmh.com/make-grunt-watch-for-lesscss-changes/">Make Grunt watch for LESS-CSS changes</a>
+<a href="http://merrickchristensen.com/articles/gruntjs-workflow.html">Grunt.js Workflow</a>
+<a href="http://gruntjs.com/getting-started">Grunt Getting Start</a></p>
+
+<h3>Installation</h3>
+
+<p>Lets install the Grunt CLI globally so we can access the &ldquo;grunt&rdquo; command.</p>
+
+<pre><code>npm install grunt-cli -g
+</code></pre>
+
+<p>check and make sure Grunt is installed correctly</p>
+
+<pre><code>grunt --version
+</code></pre>
+
+<p><strong>Note</strong> that installing grunt-cli does not install the Grunt task runner! The job of the Grunt CLI is simple: run the version of Grunt which has been installed next to a Gruntfile. This allows multiple versions of Grunt to be installed on the same machine simultaneously.</p>
+
+<h3>Project Integration</h3>
+
+<p>Integrate Grunt with our project.
+package.json</p>
+
+<pre><code>{
+    "name": "my-project-name",
+    "version": "0.1.0",
+    "devDependencies": {
+      "grunt": "~0.4.2",
+      "grunt-contrib-jshint": "~0.6.3",
+      "grunt-contrib-nodeunit": "~0.2.0",
+      "grunt-contrib-uglify": "~0.2.2"
+    }
+}
+</code></pre>
+
+<p>A Gruntfile is a JavaScript file that Grunt leverages to understand your projects tasks and configuration. When you run &ldquo;grunt&rdquo; from the command line, Grunt will recurse upwards till it finds your Gruntfile. This functionality allows you to run Grunt from any sub directory of your project.</p>
+
+<h3>Gruntfile.js</h3>
+
+<p>A Gruntfile is comprised of the following parts:</p>
+
+<ul>
+<li>The &ldquo;wrapper&rdquo; function</li>
+<li>Project and task configuration</li>
+<li>Loading Grunt plugins and tasks</li>
+<li>Custom tasks</li>
+</ul>
+
+
+<p>This is the basis of a Grunt file, it&rsquo;s a wrapper function that takes in &ldquo;grunt&rdquo; as an argument. This allows us to register tasks and configuration with grunt (and leverage Grunt&rsquo;s APIs) before Grunt actually runs any tasks</p>
+
+<pre><code>module.exports = function(grunt) {
+     // set up grunt
+};
+</code></pre>
+
+<h3>Automate The Grunt Work</h3>
+
+<p><strong>JSHint</strong></p>
+
+<pre><code>npm install grunt-contrib-jshint --save-dev 
+
+module.exports = function(grunt) {
+      grunt.initConfig({
+        jshint: {
+          src: ['Gruntfile.js', 'src/app/**/*.js', 'src/config.js', 'tests/app/**/*.js'],
+          options: {
+            curly: true,
+            eqeqeq: true,
+            immed: true,
+            latedef: true,
+            newcap: true,
+            noarg: true,
+            sub: true,
+            undef: true,
+            boss: true,
+            eqnull: true,
+            browser: true,
+            globals: {
+              require: true,
+              define: true,
+              requirejs: true,
+              describe: true,
+              expect: true,
+              it: true
+            }
+          }
+        }
+      });
+
+      // Load JSHint task
+      grunt.loadNpmTasks('grunt-contrib-jshint');
+
+      // Default task.
+      grunt.registerTask('default', 'jshint');
+};
+</code></pre>
+
+<h3>run grunt</h3>
+
+<pre><code>$ grunt
+
+Running "jshint:src" (jshint) task
+Lint free.
+
+Done, without errors.
+</code></pre>
+
+<p>OR :</p>
+
+<pre><code>$ grunt jshint 
+
+Running "jshint:src" (jshint) task
+Lint free.
+
+Done, without errors.
+</code></pre>
+
+<h3>grunt &ldquo;watch&rdquo; task</h3>
+
+<pre><code>npm install grunt-contrib-watch --save-dev
+
+grunt.initConfig({
+    watch: {
+        files: '&lt;%= jshint.src %&gt;',
+        tasks: ['jshint']
+    },  
+});
+
+grunt.loadNpmTasks('grunt-contrib-watch');
+</code></pre>
+
+<p>This tells the grunt &ldquo;watch&rdquo; task (a built in task), to run the &ldquo;lint&rdquo; task every time one of the configuration specified lint files changes</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -584,6 +754,10 @@ when Octopress runs commond rake depoly, it will push two brance to Github, one 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/09/setup-grunt-project/">Setup Grunt Project</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/09/tdd/">Test-Driven Development in Node.js With Mocha</a>
       </li>
     
@@ -597,10 +771,6 @@ when Octopress runs commond rake depoly, it will push two brance to Github, one 
     
       <li class="post">
         <a href="/blog/2013/12/28/oauth-2-dot-0/">OAuth 2.0</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/26/hello-octopress/">Setup a Octopress Blog With Github</a>
       </li>
     
   </ul>
