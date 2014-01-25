@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2014-01-25T12:21:59+08:00</updated>
+  <updated>2014-01-25T12:52:39+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[Ian Zhao]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chrome Extension]]></title>
+    <link href="http://falconzy.github.io/blog/2014/01/25/chrome-extension/"/>
+    <updated>2014-01-25T12:51:45+08:00</updated>
+    <id>http://falconzy.github.io/blog/2014/01/25/chrome-extension</id>
+    <content type="html"><![CDATA[<h3>Building Your First Chrome Extension</h3>
+
+<ul>
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/developing-google-chrome-extensions/">Developing Google Chrome Extensions</a></li>
+<li><a href="http://css-tricks.com/colorpeek-simple-way-see-share-css-colors/">Colorpeek: A Simple Way to See and Share CSS Colors</a></li>
+<li><a href="http://css-tricks.com/colorpeek-part-2-building-first-chrome-extension/">Colorpeek, Part 2: Building Your First Chrome Extension</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ASP.NET MVC]]></title>
