@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2014-01-09T20:49:22+08:00</updated>
+  <updated>2014-01-25T12:21:59+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[Ian Zhao]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ASP.NET MVC]]></title>
+    <link href="http://falconzy.github.io/blog/2014/01/25/asp-dot-net-mvc/"/>
+    <updated>2014-01-25T12:17:28+08:00</updated>
+    <id>http://falconzy.github.io/blog/2014/01/25/asp-dot-net-mvc</id>
+    <content type="html"><![CDATA[<h3>ASP.NET MVC</h3>
+
+<ul>
+<li><a href="http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started">Getting Started with ASP.NET MVC 5</a></li>
+<li><a href="http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on">Create an ASP.NET MVC 5 App with Facebook and Google OAuth2 and OpenID Sign-on</a></li>
+<li><a href="http://mazharkaunain.blogspot.sg/2012/03/aspnet-mvc-using-automapper.html?m=1">Asp.net mvc using AutoMapper simplified</a></li>
+<li><a href="http://www.codeproject.com/Articles/674760/Code-First-Migration-and-Extending-Identity-Accoun">Code-First Migration and Extending Identity Accounts in ASP.NET MVC 5 and Visual Studio 2013</a></li>
+<li><a href="http://www.microsoftvirtualacademy.com/training-courses/developing-asp-net-mvc-4-web-applications-jump-start#?fbid=HMGAeyEDJmJ">Developing ASP.NET MVC 4.5 Web Applications Jump Start</a></li>
+<li><a href="http://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx">Attribute Routing in ASP.NET MVC 5</a></li>
+<li><a href="http://www.codeproject.com/Articles/525532/Design-and-Develop-a-website-using-ASP-NET-MVC-4-E">Design and Develop a website using ASP.NET MVC 4, EF, Knockoutjs and Bootstrap</a></li>
+<li><a href="http://www.dotnet-tricks.com/Tutorial/mvc/9KHW190712-ViewData-vs-ViewBag-vs-TempData-objects-in-mvc3-razor.html">ViewData vs ViewBag vs TempData objects in mvc3 razor</a></li>
+<li><a href="http://www.dotnetcurry.com/showarticle.aspx?ID=814">Understanding Routing in ASP.NET MVC</a></li>
+<li><a href="http://weblogs.asp.net/jgalloway/archive/2012/08/29/simplemembership-membership-providers-universal-providers-and-the-new-asp-net-4-5-web-forms-and-asp-net-mvc-4-templates.aspx">SimpleMembership, Membership Providers, Universal Providers and the new ASP.NET 4.5 Web Forms and ASP.NET MVC 4 templates</a></li>
+<li><a href="http://www.mikesdotnetting.com/Article/188/View-Model-Design-And-Use-In-Razor-Views">View Model Design And Use In Razor Views</a></li>
+<li><a href="http://blogs.msdn.com/b/aspnetue/archive/2010/09/17/second_2d00_post.aspx">Best Practices for ASP.NET MVC</a></li>
+<li><a href="http://blog.osbornm.com/2010/07/21/using-simplemembership-with-asp-net-webpages/">Using SimpleMembership With ASP.NET WebPages</a></li>
+<li><a href="http://weblogs.asp.net/scottgu/archive/2010/01/15/asp-net-mvc-2-model-validation.aspx">ASP.NET MVC 2: Model Validation</a></li>
+<li><a href="http://www.hanselman.com/blog/OneASPNETMakingJSONWebAPIsWithASPNETMVC4BetaAndASPNETWebAPI.aspx">Making JSON Web APIs with ASP.NET MVC 4 Beta and ASP.NET Web API</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setup Grunt Project]]></title>
