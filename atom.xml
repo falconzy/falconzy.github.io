@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2014-01-25T12:55:09+08:00</updated>
+  <updated>2014-01-25T12:57:38+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[Ian Zhao]]></name>
@@ -18,9 +18,7 @@
     <link href="http://falconzy.github.io/blog/2014/01/25/github-projects/"/>
     <updated>2014-01-25T12:54:32+08:00</updated>
     <id>http://falconzy.github.io/blog/2014/01/25/github-projects</id>
-    <content type="html"><![CDATA[<h3>Userful Github Project</h3>
-
-<h3>Jquery</h3>
+    <content type="html"><![CDATA[<h3>Jquery</h3>
 
 <ul>
 <li><a href="https://github.com/posabsolute/jQuery-Validation-Engine">jQuery form validation plugin</a> -Javascript plugin aimed at the validation of form fields in the browser</li>
@@ -66,7 +64,7 @@
 
 <h3>Programming guide</h3>
 
-<p><a href="https://github.com/mgechev/angularjs-style-guide">angularjs-style-guide</a> &ndash; Community-driven set of best practices for AngularJS application development
+<p><a href="https://github.com/mgechev/angularjs-style-guide">angularjs-style-guide</a> &ndash; Community-driven set of best practices for AngularJS
 <a href="https://github.com/csswizardry/CSS-Guidelines">CSS-Guidelines</a> &ndash; High-level guidelines from writing manageable, maintainable CSS</p>
 ]]></content>
   </entry>
