@@ -4,7 +4,7 @@
   <title><![CDATA[falconzy's Blog]]></title>
   <link href="http://falconzy.github.io/atom.xml" rel="self"/>
   <link href="http://falconzy.github.io/"/>
-  <updated>2014-05-03T15:56:47+08:00</updated>
+  <updated>2014-05-03T15:59:16+08:00</updated>
   <id>http://falconzy.github.io/</id>
   <author>
     <name><![CDATA[Ian Zhao]]></name>
@@ -20,26 +20,32 @@
     <id>http://falconzy.github.io/blog/2014/05/03/angularjs-learning-resource</id>
     <content type="html"><![CDATA[<h3>Angular setep by step learning website</h3>
 
-<p><a href="http://angular-tips.com/blog/2013/08/why-does-angular-dot-js-rock/">Why Does Angular.js Rock?</a>
-<a href="http://lostechies.com/gabrielschenker/2013/12/05/angularjspart-1[/">AngularJS–Part 1 to Part 15 &ndash; LosTechnies</a>
-<a href="https://egghead.io/lessons">AngularJS Training Videos and Tutorials for Developers</a>
-<a href="http://www.thinkster.io/angularjs/GtaQ0oMGIl">A Better Way to Learn AngularJS</a></p>
+<ul>
+<li><a href="http://angular-tips.com/blog/2013/08/why-does-angular-dot-js-rock/">Why Does Angular.js Rock?</a></li>
+<li><a href="http://lostechies.com/gabrielschenker/2013/12/05/angularjspart-1[/">AngularJS–Part 1 to Part 15 &ndash; LosTechnies</a></li>
+<li><a href="https://egghead.io/lessons">AngularJS Training Videos and Tutorials for Developers</a></li>
+<li><a href="http://www.thinkster.io/angularjs/GtaQ0oMGIl">A Better Way to Learn AngularJS</a></li>
+</ul>
+
 
 <h3>recommend Blogs</h3>
 
-<p><a href="http://viralpatel.net/blogs/angularjs-routing-and-views-tutorial-with-example/">AngularJS Routing And Views Tutorial With Example</a>
-<a href="http://viralpatel.net/blogs/angularjs-service-factory-tutorial/">AngularJS Service / Factory Tutorial With Example</a>
-<a href="http://viralpatel.net/blogs/angularjs-routing-and-views-tutorial-with-example/">AngularJS Routing And Views Tutorial With Example</a>
-<a href="http://scotch.io/tutorials/javascript/angular-routing-using-ui-router">AngularJS Routing Using UI-Router</a>
-<a href="http://scotch.io/tutorials/javascript/angularjs-form-validation">AngularJS Form Validation</a>
-<a href="http://scotch.io/tutorials/javascript/submitting-ajax-forms-the-angularjs-way">Submitting AJAX Forms: The AngularJS Way</a>
-<a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Single Page Apps with AngularJS Routing and Templating</a>
-<a href="http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular">Creating a Single Page Todo App with Node and Angular</a>
-<a href="http://scotch.io/tutorials/javascript/handling-checkboxes-and-radio-buttons-in-angular-forms">Handling Checkboxes and Radio Buttons in Angular Forms</a>
-<a href="http://www.masnun.com/2013/08/28/rest-access-in-angularjs-using-ngresource.html">REST ACCESS IN ANGULARJS USING NGRESOURCE</a>
-<a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">Best Practice Recommendations for Angular App Structure</a>
-<a href="http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-karma.html#karma">Full-Spectrum Testing with AngularJS and Karma</a>
-<a href="http://www.sitepoint.com/unit-and-e2e-testing-in-angularjs/">Unit and End to End Testing in AngularJS</a></p>
+<ul>
+<li><a href="http://viralpatel.net/blogs/angularjs-routing-and-views-tutorial-with-example/">AngularJS Routing And Views Tutorial With Example</a></li>
+<li><a href="http://viralpatel.net/blogs/angularjs-service-factory-tutorial/">AngularJS Service / Factory Tutorial With Example</a></li>
+<li><a href="http://viralpatel.net/blogs/angularjs-routing-and-views-tutorial-with-example/">AngularJS Routing And Views Tutorial With Example</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/angular-routing-using-ui-router">AngularJS Routing Using UI-Router</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/angularjs-form-validation">AngularJS Form Validation</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/submitting-ajax-forms-the-angularjs-way">Submitting AJAX Forms: The AngularJS Way</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and--%20templating">Single Page Apps with AngularJS Routing and Templating</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular">Creating a Single Page Todo App with Node and Angular</a></li>
+<li><a href="http://scotch.io/tutorials/javascript/handling-checkboxes-and-radio-buttons-in-angular-forms">Handling Checkboxes and Radio Buttons in Angular Forms</a></li>
+<li><a href="http://www.masnun.com/2013/08/28/rest-access-in-angularjs-using-ngresource.html">REST ACCESS IN ANGULARJS USING NGRESOURCE</a></li>
+<li><a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">Best Practice Recommendations for Angular App Structure</a></li>
+<li><a href="http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-karma.html#karma">Full-Spectrum Testing with AngularJS and Karma</a></li>
+<li><a href="http://www.sitepoint.com/unit-and-e2e-testing-in-angularjs/">Unit and End to End Testing in AngularJS</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
